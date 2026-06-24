@@ -9,6 +9,130 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/components.css">
 <style>
+  .health-categories-section{
+  max-width:1400px;
+  margin:40px auto;
+  padding:20px;
+}
+
+.categories-hero{
+  display:grid;
+  grid-template-columns:1fr 400px;
+  align-items:center;
+  gap:40px;
+  margin-bottom:40px;
+}
+
+.hero-content h1{
+  font-size:64px;
+  font-weight:800;
+  margin-bottom:15px;
+}
+
+.hero-content h1 span{
+  color:#ff7a00;
+}
+
+.hero-content p{
+  font-size:18px;
+  color:#555;
+  max-width:650px;
+  line-height:1.8;
+}
+
+.hero-badge{
+  display:inline-block;
+  margin-top:20px;
+  background:#e9f8ef;
+  color:#0b7a4d;
+  padding:12px 20px;
+  border-radius:50px;
+  font-weight:600;
+}
+
+.hero-image img{
+  width:100%;
+}
+
+.categories-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+.category-card{
+  background:#fff;
+  border-radius:24px;
+  padding:28px;
+  display:flex;
+  align-items:center;
+  gap:20px;
+  position:relative;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+  transition:.3s;
+}
+
+.category-card:hover{
+  transform:translateY(-6px);
+}
+
+.icon-box{
+  width:90px;
+  height:90px;
+  border-radius:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:42px;
+}
+
+.heart{background:#ffeaea;}
+.diabetes{background:#eaf3ff;}
+.mental{background:#f4e8ff;}
+.immunity{background:#eefde8;}
+.skin{background:#ffeef5;}
+.baby{background:#fff5d9;}
+
+.category-card h3{
+  margin:0 0 8px;
+  font-size:30px;
+  color:#0b5c3b;
+}
+
+.category-card p{
+  margin:0;
+  color:#666;
+  line-height:1.6;
+}
+
+.arrow{
+  position:absolute;
+  right:25px;
+  bottom:20px;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  background:#f3f4f6;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+}
+
+@media(max-width:992px){
+
+  .categories-hero{
+    grid-template-columns:1fr;
+  }
+
+  .categories-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-content h1{
+    font-size:42px;
+  }
+}
     
    /* Grid layout */
     .categories-display-grid {
@@ -237,46 +361,82 @@ body::before {
   <a href="dashboard.html">🧑‍⚕️ Dashboard</a>
   <a href="#login">👤 Login</a>
 </div>
-<section class="categories-main-section" style="max-width: 1200px; margin: 40px auto;">
-    <h1 class="categories-page-title">Health Categories</h1>
-    
-    <div class="categories-display-grid">
-        <div class="health-category-card">
-            <div class="category-avatar-square" style="background: #ffeaea;">❤️</div>
-            <h3>Heart Care</h3>
-            <a href="#" class="category-action-link">View All →</a>
-        </div>
+<section class="health-categories-section">
 
-        <div class="health-category-card">
-            <div class="category-avatar-square" style="background: #e8f3ff;">🩸</div>
-            <h3>Diabetes Care</h3>
-            <a href="#" class="category-action-link">View All →</a>
-        </div>
+  <div class="categories-hero">
+    <div class="hero-content">
+      <h1>Health <span>Categories</span></h1>
+      <p>
+        Browse health categories to discover expert articles,
+        wellness tips, and guidance for a healthier you and your family.
+      </p>
 
-        <div class="health-category-card">
-            <div class="category-avatar-square" style="background: #f4e8ff;">🧠</div>
-            <h3>Mental Wellness</h3>
-            <a href="#" class="category-action-link">View All →</a>
-        </div>
-
-        <div class="health-category-card">
-            <div class="category-avatar-square" style="background: #e8fff0;">💪</div>
-            <h3>Immunity</h3>
-            <a href="#" class="category-action-link">View All →</a>
-        </div>
-
-        <div class="health-category-card">
-            <div class="category-avatar-square" style="background: #fce7f3;">🧴</div>
-            <h3>Skin Care</h3>
-            <a href="#" class="category-action-link">View All →</a>
-        </div>
-
-        <div class="health-category-card">
-            <div class="category-avatar-square" style="background: #e0f2fe;">👶</div>
-            <h3>Baby Care</h3>
-            <a href="#" class="category-action-link">View All →</a>
-        </div>
+      <div class="hero-badge">
+        🌿 Expert insights. Better health. Every day.
+      </div>
     </div>
+
+  
+  </div>
+
+  <div class="categories-grid">
+
+    <div class="category-card">
+      <div class="icon-box heart">❤️</div>
+      <div>
+        <h3>Heart Care</h3>
+        <p>Tips, diet, exercises and guidance for a healthy heart.</p>
+      </div>
+      <span class="arrow">→</span>
+    </div>
+
+    <div class="category-card">
+      <div class="icon-box diabetes">🩸</div>
+      <div>
+        <h3>Diabetes Care</h3>
+        <p>Manage blood sugar, diet, lifestyle and medicines.</p>
+      </div>
+      <span class="arrow">→</span>
+    </div>
+
+    <div class="category-card">
+      <div class="icon-box mental">🧠</div>
+      <div>
+        <h3>Mental Wellness</h3>
+        <p>Stress management, better sleep and mindfulness.</p>
+      </div>
+      <span class="arrow">→</span>
+    </div>
+
+    <div class="category-card">
+      <div class="icon-box immunity">💪</div>
+      <div>
+        <h3>Immunity</h3>
+        <p>Boost immunity with foods, vitamins and habits.</p>
+      </div>
+      <span class="arrow">→</span>
+    </div>
+
+    <div class="category-card">
+      <div class="icon-box skin">🧴</div>
+      <div>
+        <h3>Skin Care</h3>
+        <p>Skin health tips, routine and dermatologist advice.</p>
+      </div>
+      <span class="arrow">→</span>
+    </div>
+
+    <div class="category-card">
+      <div class="icon-box baby">👶</div>
+      <div>
+        <h3>Baby Care</h3>
+        <p>Baby nutrition, care tips and growth guidance.</p>
+      </div>
+      <span class="arrow">→</span>
+    </div>
+
+  </div>
+
 </section>
 <!-- ALTERNATIVES MODAL -->
 <div class="modal-overlay" id="alt-modal" role="dialog" aria-modal="true" aria-labelledby="alt-modal-title">
